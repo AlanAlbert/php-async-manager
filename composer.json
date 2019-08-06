@@ -1,0 +1,20 @@
+{
+    "name": "alanalbert/php-async-manager",
+    "description": "管理alanalbert/php-async库创建的异步任务",
+    "type": "library",
+    "require": {
+        "symfony/console": "^4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AlanAlbert",
+            "email": "alan1766447919@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Async\\": "src/"
+        }
+    }
+}
