@@ -3,7 +3,10 @@ namespace Async;
 
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Exception\CommandNotFoundException;
+use Async\Command\TaskCommand;
+use Async\Command\StopCommand;
 use Throwable;
+use Async\Command\ListCommand;
 
 class AsyncManager extends Application
 {   
@@ -43,7 +46,8 @@ class AsyncManager extends Application
     const STATUS_COMPLETED  = 'COMPLETED';  
 
     protected $commands = [
-        ListCommand::class,     // 查看异步进程
+        ListCommand::class,     // 列出可使用的命令
+        TaskCommand::class,     // 查看异步进程
         StopCommand::class,     // 停止异步进程
     ];
 
@@ -59,7 +63,7 @@ class AsyncManager extends Application
             $this->add($instance);
         }
 
-        // 设置默认命令为help
-        $this->setDefaultCommand('help');
+        // 设置默认命令为list
+        $this->setDefaultCommand('list');
     }
 }

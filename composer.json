@@ -3,7 +3,8 @@
     "description": "管理alanalbert/php-async库创建的异步任务",
     "type": "library",
     "require": {
-        "symfony/console": "^4.3"
+        "symfony/console": "^4.3",
+        "humbug/box": "^3.7"
     },
     "license": "MIT",
     "authors": [
@@ -16,5 +17,6 @@
         "psr-4": {
             "Async\\": "src/"
         }
-    }
+    },
+    "bin": ["bin/pam"]
 }

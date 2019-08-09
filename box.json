@@ -1,0 +1,34 @@
+{
+    "main": "index.php",
+    "output": "bin/pam.phar",
+    "directories": [
+        "bin",
+        "src",
+        "vendor"
+    ],
+    "finder": [
+        {
+            "notName": "/LICENSE|.*\\.md|.*\\.dist|composer\\.json|composer\\.lock/",
+            "exclude": [
+                "doc",
+                "docs",
+                "test",
+                "test_old",
+                "tests",
+                "Tests",
+                "vendor-bin"
+            ],
+            "in": "vendor"
+        },
+        {
+            "name": "composer.json",
+            "in": "."
+        }
+    ],
+    "compression": "BZ2",
+    "compactors": [
+        "KevinGH\\Box\\Compactor\\Json",
+        "KevinGH\\Box\\Compactor\\Php"
+    ],
+    "git-version": "v0.0.1"
+}
