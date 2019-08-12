@@ -2,7 +2,7 @@
 <?php
 use Async\AsyncManager;
 
-require './vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
 
 $manager = new AsyncManager();
 
