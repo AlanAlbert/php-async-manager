@@ -43,17 +43,15 @@ class TaskCommand extends Command
             $this->render($asyncs, $output);
         } elseif ($filterOptions['stopped']) {
             $asyncs = $this->parsePidsFile(AsyncManager::STATUS_STOPPED);
-            var_dump($asyncs);
+            $this->render($asyncs, $output);
         } elseif ($filterOptions['completed']) {
             $asyncs = $this->parsePidsFile(AsyncManager::STATUS_COMPLETED);
-            var_dump($asyncs);
-        } else {
-            $asyncs = $this->parsePidsFile();
             $this->render($asyncs, $output);
-        }
-
-        // 如果开启all, 覆盖以上
-        if ($filterOptions['all']) {
+        } elseif ($filterOptions['all'] || 
+            !($filterOptions['all'] || 
+            $filterOptions['running'] || 
+            $filterOptions['stopped'] ||
+            $filterOptions['completed'])) {
             $asyncs = $this->parsePidsFile();
             $this->render($asyncs, $output);
         }
