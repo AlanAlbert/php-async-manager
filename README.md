@@ -1,4 +1,4 @@
-# php-async
+# php-async-manager
 
 PHP异步任务管理工具（搭配[php-async](https://github.com/AlanAlbert/php-async)使用）
 
